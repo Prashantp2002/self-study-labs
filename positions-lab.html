@@ -1,0 +1,355 @@
+
+  <title>CSS Position Lab</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+    }
+
+    h1 {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    section {
+      width: 90%;
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 25px;
+      background-color: white;
+      border-radius: 8px;
+    }
+
+    h2 {
+      margin-top: 0;
+    }
+
+    .description {
+      color: gray;
+    }
+
+    .profile {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      background-color: lightgray;
+      border-radius: 50%;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      font-size: 35px;
+    }
+
+    .notification {
+      position: absolute;
+      top: 0;
+      right: 0;
+
+      width: 25px;
+      height: 25px;
+
+      background-color: red;
+      color: white;
+
+      border-radius: 50%;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      font-size: 12px;
+    }
+
+    .sticky-header {
+      position: sticky;
+      top: 0;
+
+      padding: 15px;
+
+      background-color: black;
+      color: white;
+
+      text-align: center;
+    }
+
+    .long-content {
+      height: 500px;
+      background-color: #eee;
+      padding: 20px;
+    }
+
+    .floating-button {
+      position: fixed;
+
+      right: 20px;
+      bottom: 20px;
+
+      width: 50px;
+      height: 50px;
+
+      border: none;
+      border-radius: 50%;
+
+      background-color: black;
+      color: white;
+
+      font-size: 25px;
+    }
+
+    .cards-container {
+      position: relative;
+      height: 250px;
+    }
+
+    .card {
+      position: absolute;
+
+      width: 160px;
+      height: 100px;
+
+      padding: 20px;
+
+      color: white;
+
+      border-radius: 8px;
+    }
+
+    .card-one {
+      left: 20px;
+      top: 20px;
+
+      background-color: red;
+      z-index: 1;
+    }
+
+    .card-two {
+      left: 80px;
+      top: 60px;
+
+      background-color: blue;
+      z-index: 2;
+    }
+
+    .card-three {
+      left: 140px;
+      top: 100px;
+
+      background-color: green;
+      z-index: 3;
+    }
+
+    .stack-parent {
+      position: relative;
+      z-index: 1;
+
+      width: 300px;
+      height: 180px;
+
+      background-color: lightblue;
+    }
+
+    .stack-child {
+      position: absolute;
+
+      top: 50px;
+      left: 50px;
+
+      width: 200px;
+      height: 100px;
+
+      background-color: orange;
+
+      z-index: 999;
+    }
+
+    .stack-other {
+      position: relative;
+
+      margin-top: -70px;
+      margin-left: 180px;
+
+      width: 200px;
+      height: 100px;
+
+      background-color: purple;
+      color: white;
+
+      padding: 20px;
+
+      z-index: 2;
+    }
+
+    .dropdown-card {
+      position: relative;
+
+      width: 300px;
+      height: 120px;
+
+      padding: 20px;
+
+      background-color: #ddd;
+
+      border: 2px solid black;
+
+      overflow: visible;
+    }
+
+    .dropdown-button {
+      padding: 10px 15px;
+
+      background-color: black;
+      color: white;
+
+      border: none;
+      border-radius: 5px;
+    }
+
+    .dropdown-menu {
+      position: absolute;
+
+      top: 65px;
+      left: 20px;
+
+      width: 200px;
+
+      background-color: white;
+
+      border: 1px solid gray;
+
+      z-index: 10;
+    }
+
+    .dropdown-menu div {
+      padding: 10px;
+
+      border-bottom: 1px solid #ddd;
+    }
+
+    .dropdown-menu div:last-child {
+      border-bottom: none;
+    }
+  </style>
+
+  <h1>CSS Position Lab</h1>
+
+  <section>
+    <h2>Exercise 1: Notification Badge</h2>
+
+    <p class="description">
+      The notification should stay at the top-right of the profile.
+    </p>
+
+    <div class="profile">
+      👤
+
+      <div class="notification">
+        3
+      </div>
+    </div>
+  </section>
+
+  <div class="sticky-header">
+    Sticky Header
+  </div>
+
+  <section>
+    <h2>Exercise 2: Sticky Header</h2>
+
+    <p class="description">
+      Scroll the page and check how the header stays at the top.
+    </p>
+
+    <div class="long-content">
+      <p>Scroll down to test sticky positioning.</p>
+      <p>Keep scrolling...</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Exercise 3: Floating Action Button</h2>
+
+    <p class="description">
+      This button stays at the bottom-right of the screen.
+    </p>
+  </section>
+
+  <button class="floating-button">
+    +
+  </button>
+
+  <section>
+    <h2>Exercise 4: Overlapping Cards</h2>
+
+    <p class="description">
+      These cards overlap using position absolute and z-index.
+    </p>
+
+    <div class="cards-container">
+
+      <div class="card card-one">
+        Card 1
+      </div>
+
+      <div class="card card-two">
+        Card 2
+      </div>
+
+      <div class="card card-three">
+        Card 3
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <h2>Exercise 5: Stacking Context</h2>
+
+    <p class="description">
+      Try changing the z-index values and see which element comes on top.
+    </p>
+
+    <div class="stack-parent">
+
+      Parent
+
+      <div class="stack-child">
+        Child
+      </div>
+
+    </div>
+
+    <div class="stack-other">
+      Other Element
+    </div>
+  </section>
+
+  <section>
+    <h2>Exercise 6: Dropdown Clipped by Overflow</h2>
+
+    <p class="description">
+      The dropdown is positioned outside the card.
+    </p>
+
+    <div class="dropdown-card">
+
+      <button class="dropdown-button">
+        Open Menu
+      </button>
+
+      <div class="dropdown-menu">
+        <div>Option 1</div>
+        <div>Option 2</div>
+        <div>Option 3</div>
+        <div>Option 4</div>
+      </div>
+
+    </div>
+  </section>
